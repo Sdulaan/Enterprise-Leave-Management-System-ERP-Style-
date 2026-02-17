@@ -127,10 +127,10 @@ namespace EnterpriseLeaveManagement.API.Controllers
             try
             {
                 var managerIdClaim = User.FindFirst("EmployeeId")?.Value;
-                if (string.IsNullOrEmpty(managerIdClaim) || !int.TryParse(managerIdClaim, out int managerId))
+                if (string.IsNullOrEmpty(managerIdClaim))
                     return Unauthorized();
 
-                var result = await _leaveService.GetTeamLeaveRequestsAsync(managerId);
+                var result = await _leaveService.GetTeamLeaveRequestsAsync(managerIdClaim);
                 return Ok(new { success = true, data = result });
             }
             catch (Exception ex)

@@ -12,7 +12,7 @@ namespace EnterpriseLeaveManagement.Core.Entities
         public DateTime DateOfBirth { get; set; }
         public DateTime DateOfJoining { get; set; }
         public int? DepartmentId { get; set; }
-        public int? ManagerId { get; set; }
+        public string? ManagerId { get; set; } // Changed from int? to string?
         public UserRole Role { get; set; }
         public decimal AnnualLeaveBalance { get; set; }
         public decimal SickLeaveBalance { get; set; }

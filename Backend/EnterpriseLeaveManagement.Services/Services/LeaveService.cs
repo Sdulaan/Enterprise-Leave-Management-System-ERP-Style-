@@ -139,7 +139,7 @@ namespace EnterpriseLeaveManagement.Services.Services
             return leaves.Select(MapToDto);
         }
 
-        public async Task<IEnumerable<LeaveRequestDto>> GetTeamLeaveRequestsAsync(int managerId)
+        public async Task<IEnumerable<LeaveRequestDto>> GetTeamLeaveRequestsAsync(string managerId)
         {
             var teamLeaves = await _context.LeaveRequests
                 .Include(l => l.User)
@@ -258,6 +258,7 @@ namespace EnterpriseLeaveManagement.Services.Services
 
         private byte[] GenerateReportFile(List<LeaveRequest> data, string format)
         {
+            // Placeholder for report generation logic
             return Array.Empty<byte>();
         }
     }

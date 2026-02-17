@@ -1,0 +1,400 @@
+2026-02-17 15:20:53.382 +05:30 [INF] User profile is available. Using 'C:\Users\USER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-02-17 15:20:53.611 +05:30 [WRN] The foreign key property 'User.DepartmentId1' was created in shadow state because a conflicting property with the simple name 'DepartmentId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2026-02-17 15:20:53.624 +05:30 [WRN] No store type was specified for the decimal property 'NumberOfDays' on entity type 'LeaveRequest'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-02-17 15:20:53.625 +05:30 [WRN] No store type was specified for the decimal property 'AnnualLeaveBalance' on entity type 'User'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-02-17 15:20:53.625 +05:30 [WRN] No store type was specified for the decimal property 'CasualLeaveBalance' on entity type 'User'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-02-17 15:20:53.626 +05:30 [WRN] No store type was specified for the decimal property 'SickLeaveBalance' on entity type 'User'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-02-17 15:20:55.480 +05:30 [WRN] The foreign key property 'User.DepartmentId1' was created in shadow state because a conflicting property with the simple name 'DepartmentId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2026-02-17 15:20:55.484 +05:30 [WRN] No store type was specified for the decimal property 'NumberOfDays' on entity type 'LeaveRequest'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-02-17 15:20:55.484 +05:30 [WRN] No store type was specified for the decimal property 'AnnualLeaveBalance' on entity type 'User'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-02-17 15:20:55.485 +05:30 [WRN] No store type was specified for the decimal property 'CasualLeaveBalance' on entity type 'User'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-02-17 15:20:55.486 +05:30 [WRN] No store type was specified for the decimal property 'SickLeaveBalance' on entity type 'User'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-02-17 15:20:55.580 +05:30 [INF] Executed DbCommand (69ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE DATABASE [EnterpriseLeaveManagementDB];
+2026-02-17 15:20:55.608 +05:30 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [EnterpriseLeaveManagementDB] SET READ_COMMITTED_SNAPSHOT ON;
+END;
+2026-02-17 15:20:55.619 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-02-17 15:20:55.644 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+);
+2026-02-17 15:20:55.647 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-02-17 15:20:55.658 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-02-17 15:20:55.664 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-02-17 15:20:55.673 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-02-17 15:20:55.781 +05:30 [ERR] Failed executing DbCommand (8ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-02-17 15:20:55.787 +05:30 [ERR] An exception occurred while iterating over the results of a query for context type 'EnterpriseLeaveManagement.Data.Context.ApplicationDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AspNetRoles'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__195_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:fc11de38-c058-4492-87fe-cf4eb0ef0948
+Error Number:208,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AspNetRoles'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__195_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:fc11de38-c058-4492-87fe-cf4eb0ef0948
+Error Number:208,State:1,Class:16
+2026-02-17 15:20:55.790 +05:30 [ERR] An error occurred while seeding the database.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AspNetRoles'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__195_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Identity.RoleManager`1.RoleExistsAsync(String roleName)
+   at Program.<Main>$(String[] args) in C:\Users\USER\source\repos\Enterprise-Leave-Management-System-ERP-Style-\Backend\EnterpriseLeaveManagement.API\Program.cs:line 115
+ClientConnectionId:fc11de38-c058-4492-87fe-cf4eb0ef0948
+Error Number:208,State:1,Class:16
+2026-02-17 15:20:55.805 +05:30 [INF] Creating key {9407b513-208b-4834-ba33-4eddcf65657a} with creation date 2026-02-17 09:50:55Z, activation date 2026-02-17 09:50:55Z, and expiration date 2026-05-18 09:50:55Z.
+2026-02-17 15:20:55.810 +05:30 [INF] Writing data to file 'C:\Users\USER\AppData\Local\ASP.NET\DataProtection-Keys\key-9407b513-208b-4834-ba33-4eddcf65657a.xml'.
+2026-02-17 15:20:55.854 +05:30 [INF] Now listening on: http://localhost:5062
+2026-02-17 15:20:55.855 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-02-17 15:20:55.855 +05:30 [INF] Hosting environment: Development
+2026-02-17 15:20:55.855 +05:30 [INF] Content root path: C:\Users\USER\source\repos\Enterprise-Leave-Management-System-ERP-Style-\Backend\EnterpriseLeaveManagement.API
+2026-02-17 15:22:25.402 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5062/ - null null
+2026-02-17 15:22:25.416 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-02-17 15:22:25.455 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5062/ - 404 0 null 53.6366ms
+2026-02-17 15:22:25.459 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5062/, Response status code: 404
+2026-02-17 15:22:28.647 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5062/ - null null
+2026-02-17 15:22:28.653 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5062/ - 404 0 null 5.752ms
+2026-02-17 15:22:28.657 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5062/, Response status code: 404
+2026-02-17 15:22:56.197 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5062/swagger - null null
+2026-02-17 15:22:56.202 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5062/swagger - 301 0 null 4.1794ms
+2026-02-17 15:22:56.205 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5062/swagger/index.html - null null
+2026-02-17 15:22:56.229 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5062/swagger/index.html - 200 null text/html;charset=utf-8 24.3431ms
+2026-02-17 15:22:56.241 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5062/swagger/swagger-ui.css - null null
+2026-02-17 15:22:56.242 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5062/swagger/swagger-ui-bundle.js - null null
+2026-02-17 15:22:56.243 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5062/swagger/swagger-ui-standalone-preset.js - null null
+2026-02-17 15:22:56.250 +05:30 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2026-02-17 15:22:56.250 +05:30 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2026-02-17 15:22:56.251 +05:30 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2026-02-17 15:22:56.252 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5062/swagger/swagger-ui-standalone-preset.js - 200 339486 text/javascript 9.2546ms
+2026-02-17 15:22:56.252 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5062/swagger/swagger-ui.css - 200 143943 text/css 10.9542ms
+2026-02-17 15:22:56.253 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5062/swagger/swagger-ui-bundle.js - 200 1096145 text/javascript 10.8316ms
+2026-02-17 15:22:56.329 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5062/swagger/v1/swagger.json - null null
+2026-02-17 15:22:56.336 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5062/swagger/favicon-32x32.png - null null
+2026-02-17 15:22:56.339 +05:30 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2026-02-17 15:22:56.339 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5062/swagger/favicon-32x32.png - 200 628 image/png 3.7352ms
+2026-02-17 15:22:56.371 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5062/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 41.9262ms
+2026-02-17 15:23:10.692 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5062/api/leave/balance - null null
+2026-02-17 15:23:10.700 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-02-17 15:23:10.702 +05:30 [INF] AuthenticationScheme: Bearer was challenged.
+2026-02-17 15:23:10.703 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5062/api/leave/balance - 401 0 null 10.8694ms
+2026-02-17 15:30:07.652 +05:30 [INF] Application is shutting down...
+2026-02-17 15:32:41.777 +05:30 [INF] User profile is available. Using 'C:\Users\USER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-02-17 15:32:42.001 +05:30 [WRN] The foreign key property 'User.DepartmentId1' was created in shadow state because a conflicting property with the simple name 'DepartmentId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2026-02-17 15:32:42.013 +05:30 [WRN] No store type was specified for the decimal property 'NumberOfDays' on entity type 'LeaveRequest'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-02-17 15:32:42.014 +05:30 [WRN] No store type was specified for the decimal property 'AnnualLeaveBalance' on entity type 'User'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-02-17 15:32:42.015 +05:30 [WRN] No store type was specified for the decimal property 'CasualLeaveBalance' on entity type 'User'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-02-17 15:32:42.015 +05:30 [WRN] No store type was specified for the decimal property 'SickLeaveBalance' on entity type 'User'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-02-17 15:32:42.174 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-02-17 15:32:42.191 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-02-17 15:32:42.193 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-02-17 15:32:42.195 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-02-17 15:32:42.204 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-02-17 15:32:42.213 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-02-17 15:32:42.311 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-02-17 15:32:42.316 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-02-17 15:32:42.370 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [AspNetRoles] ([Id], [ConcurrencyStamp], [Name], [NormalizedName])
+VALUES (@p0, @p1, @p2, @p3);
+2026-02-17 15:32:42.381 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-02-17 15:32:42.384 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-02-17 15:32:42.386 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [AspNetRoles] ([Id], [ConcurrencyStamp], [Name], [NormalizedName])
+VALUES (@p0, @p1, @p2, @p3);
+2026-02-17 15:32:42.387 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-02-17 15:32:42.388 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-02-17 15:32:42.390 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [AspNetRoles] ([Id], [ConcurrencyStamp], [Name], [NormalizedName])
+VALUES (@p0, @p1, @p2, @p3);
+2026-02-17 15:32:42.398 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AnnualLeaveBalance], [a].[CasualLeaveBalance], [a].[ConcurrencyStamp], [a].[DateOfBirth], [a].[DateOfJoining], [a].[DepartmentId], [a].[DepartmentId1], [a].[Email], [a].[EmailConfirmed], [a].[EmployeeCode], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[ManagerId], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[SickLeaveBalance], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-02-17 15:32:42.444 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[AnnualLeaveBalance], [a].[CasualLeaveBalance], [a].[ConcurrencyStamp], [a].[DateOfBirth], [a].[DateOfJoining], [a].[DepartmentId], [a].[DepartmentId1], [a].[Email], [a].[EmailConfirmed], [a].[EmployeeCode], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[ManagerId], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[SickLeaveBalance], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-02-17 15:32:42.495 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p3='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (DbType = DateTime2), @p7='?' (DbType = Int32), @p8='?' (DbType = Int32), @p9='?' (Size = 256), @p10='?' (DbType = Boolean), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (DbType = DateTimeOffset), @p16='?' (Size = 450), @p17='?' (Size = 256), @p18='?' (Size = 256), @p19='?' (Size = 4000), @p20='?' (Size = 4000), @p21='?' (DbType = Boolean), @p22='?' (DbType = Int32), @p23='?' (Size = 4000), @p24='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p25='?' (DbType = Boolean), @p26='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [AnnualLeaveBalance], [CasualLeaveBalance], [ConcurrencyStamp], [DateOfBirth], [DateOfJoining], [DepartmentId], [DepartmentId1], [Email], [EmailConfirmed], [EmployeeCode], [FirstName], [LastName], [LockoutEnabled], [LockoutEnd], [ManagerId], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [Role], [SecurityStamp], [SickLeaveBalance], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23, @p24, @p25, @p26);
+2026-02-17 15:32:42.501 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2026-02-17 15:32:42.516 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450), @__p_1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE [a].[UserId] = @__p_0 AND [a].[RoleId] = @__p_1
+2026-02-17 15:32:42.519 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2026-02-17 15:32:42.528 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[AnnualLeaveBalance], [a].[CasualLeaveBalance], [a].[ConcurrencyStamp], [a].[DateOfBirth], [a].[DateOfJoining], [a].[DepartmentId], [a].[DepartmentId1], [a].[Email], [a].[EmailConfirmed], [a].[EmployeeCode], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[ManagerId], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[SickLeaveBalance], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-02-17 15:32:42.553 +05:30 [INF] Executed DbCommand (12ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 450), @p28='?' (Size = 450), @p2='?' (DbType = Int32), @p3='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p4='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p5='?' (Size = 4000), @p29='?' (Size = 4000), @p6='?' (DbType = DateTime2), @p7='?' (DbType = DateTime2), @p8='?' (DbType = Int32), @p9='?' (DbType = Int32), @p10='?' (Size = 256), @p11='?' (DbType = Boolean), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (DbType = Boolean), @p16='?' (DbType = DateTimeOffset), @p17='?' (Size = 450), @p18='?' (Size = 256), @p19='?' (Size = 256), @p20='?' (Size = 4000), @p21='?' (Size = 4000), @p22='?' (DbType = Boolean), @p23='?' (DbType = Int32), @p24='?' (Size = 4000), @p25='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p26='?' (DbType = Boolean), @p27='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AspNetUserRoles] ([RoleId], [UserId])
+VALUES (@p0, @p1);
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p2, [AnnualLeaveBalance] = @p3, [CasualLeaveBalance] = @p4, [ConcurrencyStamp] = @p5, [DateOfBirth] = @p6, [DateOfJoining] = @p7, [DepartmentId] = @p8, [DepartmentId1] = @p9, [Email] = @p10, [EmailConfirmed] = @p11, [EmployeeCode] = @p12, [FirstName] = @p13, [LastName] = @p14, [LockoutEnabled] = @p15, [LockoutEnd] = @p16, [ManagerId] = @p17, [NormalizedEmail] = @p18, [NormalizedUserName] = @p19, [PasswordHash] = @p20, [PhoneNumber] = @p21, [PhoneNumberConfirmed] = @p22, [Role] = @p23, [SecurityStamp] = @p24, [SickLeaveBalance] = @p25, [TwoFactorEnabled] = @p26, [UserName] = @p27
+OUTPUT 1
+WHERE [Id] = @p28 AND [ConcurrencyStamp] = @p29;
+2026-02-17 15:32:42.582 +05:30 [INF] Now listening on: http://localhost:5062
+2026-02-17 15:32:42.584 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-02-17 15:32:42.584 +05:30 [INF] Hosting environment: Development
+2026-02-17 15:32:42.585 +05:30 [INF] Content root path: C:\Users\USER\source\repos\Enterprise-Leave-Management-System-ERP-Style-\Backend\EnterpriseLeaveManagement.API
+2026-02-17 15:36:26.288 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5062/api/auth/login - application/json 78
+2026-02-17 15:36:26.309 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-02-17 15:36:26.325 +05:30 [INF] Executing endpoint 'EnterpriseLeaveManagement.API.Controllers.AuthController.Login (EnterpriseLeaveManagement.API)'
+2026-02-17 15:36:26.334 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(EnterpriseLeaveManagement.Core.DTOs.LoginDto) on controller EnterpriseLeaveManagement.API.Controllers.AuthController (EnterpriseLeaveManagement.API).
+2026-02-17 15:36:26.363 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AnnualLeaveBalance], [a].[CasualLeaveBalance], [a].[ConcurrencyStamp], [a].[DateOfBirth], [a].[DateOfJoining], [a].[DepartmentId], [a].[DepartmentId1], [a].[Email], [a].[EmailConfirmed], [a].[EmployeeCode], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[ManagerId], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[SickLeaveBalance], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-02-17 15:36:26.443 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2026-02-17 15:36:26.459 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2026-02-17 15:36:26.463 +05:30 [INF] Executing OkObjectResult, writing value of type 'EnterpriseLeaveManagement.Core.DTOs.AuthResponseDto'.
+2026-02-17 15:36:26.469 +05:30 [INF] Executed action EnterpriseLeaveManagement.API.Controllers.AuthController.Login (EnterpriseLeaveManagement.API) in 132.6819ms
+2026-02-17 15:36:26.470 +05:30 [INF] Executed endpoint 'EnterpriseLeaveManagement.API.Controllers.AuthController.Login (EnterpriseLeaveManagement.API)'
+2026-02-17 15:36:26.473 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5062/api/auth/login - 200 null application/json; charset=utf-8 185.5082ms
+2026-02-17 15:39:41.771 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5062/swagger/index.html - null null
+2026-02-17 15:39:41.817 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5062/swagger/index.html - 200 null text/html;charset=utf-8 45.5979ms
+2026-02-17 15:39:41.894 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5062/swagger/v1/swagger.json - null null
+2026-02-17 15:39:41.939 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5062/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 45.2018ms
+2026-02-17 15:39:42.713 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5062/swagger/index.html - null null
+2026-02-17 15:39:42.720 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5062/swagger/index.html - 200 null text/html;charset=utf-8 6.7016ms
+2026-02-17 15:39:42.740 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5062/swagger/v1/swagger.json - null null
+2026-02-17 15:39:42.748 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5062/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 7.3888ms
+2026-02-17 15:40:41.555 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5062/api/auth/login - null null
+2026-02-17 15:40:41.561 +05:30 [INF] CORS policy execution successful.
+2026-02-17 15:40:41.564 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5062/api/auth/login - 204 null null 9.0095ms
+2026-02-17 15:40:41.567 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5062/api/auth/login - application/json 61
+2026-02-17 15:40:41.570 +05:30 [INF] CORS policy execution successful.
+2026-02-17 15:40:41.572 +05:30 [INF] Executing endpoint 'EnterpriseLeaveManagement.API.Controllers.AuthController.Login (EnterpriseLeaveManagement.API)'
+2026-02-17 15:40:41.573 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(EnterpriseLeaveManagement.Core.DTOs.LoginDto) on controller EnterpriseLeaveManagement.API.Controllers.AuthController (EnterpriseLeaveManagement.API).
+2026-02-17 15:40:41.623 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AnnualLeaveBalance], [a].[CasualLeaveBalance], [a].[ConcurrencyStamp], [a].[DateOfBirth], [a].[DateOfJoining], [a].[DepartmentId], [a].[DepartmentId1], [a].[Email], [a].[EmailConfirmed], [a].[EmployeeCode], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[ManagerId], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[SickLeaveBalance], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-02-17 15:40:41.626 +05:30 [INF] Executing UnauthorizedObjectResult, writing value of type 'EnterpriseLeaveManagement.Core.DTOs.AuthResponseDto'.
+2026-02-17 15:40:41.627 +05:30 [INF] Executed action EnterpriseLeaveManagement.API.Controllers.AuthController.Login (EnterpriseLeaveManagement.API) in 52.0894ms
+2026-02-17 15:40:41.628 +05:30 [INF] Executed endpoint 'EnterpriseLeaveManagement.API.Controllers.AuthController.Login (EnterpriseLeaveManagement.API)'
+2026-02-17 15:40:41.629 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5062/api/auth/login - 401 null application/json; charset=utf-8 62.0954ms
+2026-02-17 15:40:52.946 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5062/api/auth/login - null null
+2026-02-17 15:40:52.950 +05:30 [INF] CORS policy execution successful.
+2026-02-17 15:40:52.951 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5062/api/auth/login - 204 null null 4.9306ms
+2026-02-17 15:40:52.954 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5062/api/auth/login - application/json 61
+2026-02-17 15:40:52.956 +05:30 [INF] CORS policy execution successful.
+2026-02-17 15:40:52.959 +05:30 [INF] Executing endpoint 'EnterpriseLeaveManagement.API.Controllers.AuthController.Login (EnterpriseLeaveManagement.API)'
+2026-02-17 15:40:52.960 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(EnterpriseLeaveManagement.Core.DTOs.LoginDto) on controller EnterpriseLeaveManagement.API.Controllers.AuthController (EnterpriseLeaveManagement.API).
+2026-02-17 15:40:52.968 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AnnualLeaveBalance], [a].[CasualLeaveBalance], [a].[ConcurrencyStamp], [a].[DateOfBirth], [a].[DateOfJoining], [a].[DepartmentId], [a].[DepartmentId1], [a].[Email], [a].[EmailConfirmed], [a].[EmployeeCode], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[ManagerId], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[SickLeaveBalance], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-02-17 15:40:52.970 +05:30 [INF] Executing UnauthorizedObjectResult, writing value of type 'EnterpriseLeaveManagement.Core.DTOs.AuthResponseDto'.
+2026-02-17 15:40:52.971 +05:30 [INF] Executed action EnterpriseLeaveManagement.API.Controllers.AuthController.Login (EnterpriseLeaveManagement.API) in 8.7286ms
+2026-02-17 15:40:52.972 +05:30 [INF] Executed endpoint 'EnterpriseLeaveManagement.API.Controllers.AuthController.Login (EnterpriseLeaveManagement.API)'
+2026-02-17 15:40:52.973 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5062/api/auth/login - 401 null application/json; charset=utf-8 19.2383ms
+2026-02-17 15:41:09.652 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5062/api/auth/login - null null
+2026-02-17 15:41:09.659 +05:30 [INF] CORS policy execution successful.
+2026-02-17 15:41:09.662 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5062/api/auth/login - 204 null null 10.5314ms
+2026-02-17 15:41:09.670 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5062/api/auth/login - application/json 60
+2026-02-17 15:41:09.675 +05:30 [INF] CORS policy execution successful.
+2026-02-17 15:41:09.676 +05:30 [INF] Executing endpoint 'EnterpriseLeaveManagement.API.Controllers.AuthController.Login (EnterpriseLeaveManagement.API)'
+2026-02-17 15:41:09.678 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(EnterpriseLeaveManagement.Core.DTOs.LoginDto) on controller EnterpriseLeaveManagement.API.Controllers.AuthController (EnterpriseLeaveManagement.API).
+2026-02-17 15:41:09.682 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[AnnualLeaveBalance], [a].[CasualLeaveBalance], [a].[ConcurrencyStamp], [a].[DateOfBirth], [a].[DateOfJoining], [a].[DepartmentId], [a].[DepartmentId1], [a].[Email], [a].[EmailConfirmed], [a].[EmployeeCode], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[ManagerId], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[SickLeaveBalance], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-02-17 15:41:09.748 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2026-02-17 15:41:09.753 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2026-02-17 15:41:09.755 +05:30 [INF] Executing OkObjectResult, writing value of type 'EnterpriseLeaveManagement.Core.DTOs.AuthResponseDto'.
+2026-02-17 15:41:09.757 +05:30 [INF] Executed action EnterpriseLeaveManagement.API.Controllers.AuthController.Login (EnterpriseLeaveManagement.API) in 76.3533ms
+2026-02-17 15:41:09.758 +05:30 [INF] Executed endpoint 'EnterpriseLeaveManagement.API.Controllers.AuthController.Login (EnterpriseLeaveManagement.API)'
+2026-02-17 15:41:09.759 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5062/api/auth/login - 200 null application/json; charset=utf-8 89.0526ms
+2026-02-17 15:41:09.830 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5062/api/leave/history - null null
+2026-02-17 15:41:09.832 +05:30 [INF] CORS policy execution successful.
+2026-02-17 15:41:09.832 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5062/api/leave/history - 204 null null 2.1638ms
+2026-02-17 15:41:09.834 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5062/api/leave/history - null null
+2026-02-17 15:41:09.836 +05:30 [INF] CORS policy execution successful.
+2026-02-17 15:41:09.858 +05:30 [INF] Executing endpoint 'EnterpriseLeaveManagement.API.Controllers.LeaveController.GetLeaveHistory (EnterpriseLeaveManagement.API)'
+2026-02-17 15:41:09.860 +05:30 [INF] Route matched with {action = "GetLeaveHistory", controller = "Leave"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetLeaveHistory() on controller EnterpriseLeaveManagement.API.Controllers.LeaveController (EnterpriseLeaveManagement.API).
+2026-02-17 15:41:09.872 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[ActionDate], [l].[ActionedBy], [l].[Comments], [l].[CreatedAt], [l].[CreatedBy], [l].[EndDate], [l].[IsDeleted], [l].[LeaveType], [l].[NumberOfDays], [l].[Reason], [l].[StartDate], [l].[Status], [l].[UpdatedAt], [l].[UpdatedBy], [l].[UserId]
+FROM [LeaveRequests] AS [l]
+WHERE [l].[IsDeleted] = CAST(0 AS bit) AND [l].[UserId] = @__userId_0 AND [l].[IsDeleted] = CAST(0 AS bit)
+ORDER BY [l].[CreatedAt] DESC
+2026-02-17 15:41:09.874 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[EnterpriseLeaveManagement.Core.DTOs.LeaveRequestDto, EnterpriseLeaveManagement.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-17 15:41:09.878 +05:30 [INF] Executed action EnterpriseLeaveManagement.API.Controllers.LeaveController.GetLeaveHistory (EnterpriseLeaveManagement.API) in 17.055ms
+2026-02-17 15:41:09.879 +05:30 [INF] Executed endpoint 'EnterpriseLeaveManagement.API.Controllers.LeaveController.GetLeaveHistory (EnterpriseLeaveManagement.API)'
+2026-02-17 15:41:09.879 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5062/api/leave/history - 200 null application/json; charset=utf-8 45.3084ms
+2026-02-17 15:42:11.547 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5062/api/leave/history - null null
+2026-02-17 15:42:11.551 +05:30 [INF] CORS policy execution successful.
+2026-02-17 15:42:11.553 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5062/api/leave/history - 204 null null 5.9141ms
+2026-02-17 15:42:11.557 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5062/api/leave/history - null null
+2026-02-17 15:42:11.560 +05:30 [INF] CORS policy execution successful.
+2026-02-17 15:42:11.562 +05:30 [INF] Executing endpoint 'EnterpriseLeaveManagement.API.Controllers.LeaveController.GetLeaveHistory (EnterpriseLeaveManagement.API)'
+2026-02-17 15:42:11.563 +05:30 [INF] Route matched with {action = "GetLeaveHistory", controller = "Leave"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetLeaveHistory() on controller EnterpriseLeaveManagement.API.Controllers.LeaveController (EnterpriseLeaveManagement.API).
+2026-02-17 15:42:11.567 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[ActionDate], [l].[ActionedBy], [l].[Comments], [l].[CreatedAt], [l].[CreatedBy], [l].[EndDate], [l].[IsDeleted], [l].[LeaveType], [l].[NumberOfDays], [l].[Reason], [l].[StartDate], [l].[Status], [l].[UpdatedAt], [l].[UpdatedBy], [l].[UserId]
+FROM [LeaveRequests] AS [l]
+WHERE [l].[IsDeleted] = CAST(0 AS bit) AND [l].[UserId] = @__userId_0 AND [l].[IsDeleted] = CAST(0 AS bit)
+ORDER BY [l].[CreatedAt] DESC
+2026-02-17 15:42:11.569 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[EnterpriseLeaveManagement.Core.DTOs.LeaveRequestDto, EnterpriseLeaveManagement.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-17 15:42:11.571 +05:30 [INF] Executed action EnterpriseLeaveManagement.API.Controllers.LeaveController.GetLeaveHistory (EnterpriseLeaveManagement.API) in 6.3641ms
+2026-02-17 15:42:11.573 +05:30 [INF] Executed endpoint 'EnterpriseLeaveManagement.API.Controllers.LeaveController.GetLeaveHistory (EnterpriseLeaveManagement.API)'
+2026-02-17 15:42:11.575 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5062/api/leave/history - 200 null application/json; charset=utf-8 17.9109ms
+2026-02-17 15:42:13.507 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5062/api/leave/history - null null
+2026-02-17 15:42:13.509 +05:30 [INF] CORS policy execution successful.
+2026-02-17 15:42:13.510 +05:30 [INF] Executing endpoint 'EnterpriseLeaveManagement.API.Controllers.LeaveController.GetLeaveHistory (EnterpriseLeaveManagement.API)'
+2026-02-17 15:42:13.510 +05:30 [INF] Route matched with {action = "GetLeaveHistory", controller = "Leave"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetLeaveHistory() on controller EnterpriseLeaveManagement.API.Controllers.LeaveController (EnterpriseLeaveManagement.API).
+2026-02-17 15:42:13.513 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[ActionDate], [l].[ActionedBy], [l].[Comments], [l].[CreatedAt], [l].[CreatedBy], [l].[EndDate], [l].[IsDeleted], [l].[LeaveType], [l].[NumberOfDays], [l].[Reason], [l].[StartDate], [l].[Status], [l].[UpdatedAt], [l].[UpdatedBy], [l].[UserId]
+FROM [LeaveRequests] AS [l]
+WHERE [l].[IsDeleted] = CAST(0 AS bit) AND [l].[UserId] = @__userId_0 AND [l].[IsDeleted] = CAST(0 AS bit)
+ORDER BY [l].[CreatedAt] DESC
+2026-02-17 15:42:13.514 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[EnterpriseLeaveManagement.Core.DTOs.LeaveRequestDto, EnterpriseLeaveManagement.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-17 15:42:13.515 +05:30 [INF] Executed action EnterpriseLeaveManagement.API.Controllers.LeaveController.GetLeaveHistory (EnterpriseLeaveManagement.API) in 3.7989ms
+2026-02-17 15:42:13.516 +05:30 [INF] Executed endpoint 'EnterpriseLeaveManagement.API.Controllers.LeaveController.GetLeaveHistory (EnterpriseLeaveManagement.API)'
+2026-02-17 15:42:13.516 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5062/api/leave/history - 200 null application/json; charset=utf-8 9.0738ms
+2026-02-17 15:42:37.749 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5062/api/leave/history - null null
+2026-02-17 15:42:37.754 +05:30 [INF] CORS policy execution successful.
+2026-02-17 15:42:37.755 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5062/api/leave/history - 204 null null 5.7534ms
+2026-02-17 15:42:37.759 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5062/api/leave/history - null null
+2026-02-17 15:42:37.761 +05:30 [INF] CORS policy execution successful.
+2026-02-17 15:42:37.762 +05:30 [INF] Executing endpoint 'EnterpriseLeaveManagement.API.Controllers.LeaveController.GetLeaveHistory (EnterpriseLeaveManagement.API)'
+2026-02-17 15:42:37.763 +05:30 [INF] Route matched with {action = "GetLeaveHistory", controller = "Leave"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetLeaveHistory() on controller EnterpriseLeaveManagement.API.Controllers.LeaveController (EnterpriseLeaveManagement.API).
+2026-02-17 15:42:37.767 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[ActionDate], [l].[ActionedBy], [l].[Comments], [l].[CreatedAt], [l].[CreatedBy], [l].[EndDate], [l].[IsDeleted], [l].[LeaveType], [l].[NumberOfDays], [l].[Reason], [l].[StartDate], [l].[Status], [l].[UpdatedAt], [l].[UpdatedBy], [l].[UserId]
+FROM [LeaveRequests] AS [l]
+WHERE [l].[IsDeleted] = CAST(0 AS bit) AND [l].[UserId] = @__userId_0 AND [l].[IsDeleted] = CAST(0 AS bit)
+ORDER BY [l].[CreatedAt] DESC
+2026-02-17 15:42:37.769 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[EnterpriseLeaveManagement.Core.DTOs.LeaveRequestDto, EnterpriseLeaveManagement.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-17 15:42:37.770 +05:30 [INF] Executed action EnterpriseLeaveManagement.API.Controllers.LeaveController.GetLeaveHistory (EnterpriseLeaveManagement.API) in 4.7617ms
+2026-02-17 15:42:37.771 +05:30 [INF] Executed endpoint 'EnterpriseLeaveManagement.API.Controllers.LeaveController.GetLeaveHistory (EnterpriseLeaveManagement.API)'
+2026-02-17 15:42:37.772 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5062/api/leave/history - 200 null application/json; charset=utf-8 13.4426ms
+2026-02-17 15:45:33.690 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5062/api/leave/history - null null
+2026-02-17 15:45:33.692 +05:30 [INF] CORS policy execution successful.
+2026-02-17 15:45:33.693 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5062/api/leave/history - 204 null null 3.2949ms
+2026-02-17 15:45:33.696 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5062/api/leave/history - null null
+2026-02-17 15:45:33.698 +05:30 [INF] CORS policy execution successful.
+2026-02-17 15:45:33.699 +05:30 [INF] Executing endpoint 'EnterpriseLeaveManagement.API.Controllers.LeaveController.GetLeaveHistory (EnterpriseLeaveManagement.API)'
+2026-02-17 15:45:33.700 +05:30 [INF] Route matched with {action = "GetLeaveHistory", controller = "Leave"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetLeaveHistory() on controller EnterpriseLeaveManagement.API.Controllers.LeaveController (EnterpriseLeaveManagement.API).
+2026-02-17 15:45:33.703 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[ActionDate], [l].[ActionedBy], [l].[Comments], [l].[CreatedAt], [l].[CreatedBy], [l].[EndDate], [l].[IsDeleted], [l].[LeaveType], [l].[NumberOfDays], [l].[Reason], [l].[StartDate], [l].[Status], [l].[UpdatedAt], [l].[UpdatedBy], [l].[UserId]
+FROM [LeaveRequests] AS [l]
+WHERE [l].[IsDeleted] = CAST(0 AS bit) AND [l].[UserId] = @__userId_0 AND [l].[IsDeleted] = CAST(0 AS bit)
+ORDER BY [l].[CreatedAt] DESC
+2026-02-17 15:45:33.705 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[EnterpriseLeaveManagement.Core.DTOs.LeaveRequestDto, EnterpriseLeaveManagement.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-17 15:45:33.706 +05:30 [INF] Executed action EnterpriseLeaveManagement.API.Controllers.LeaveController.GetLeaveHistory (EnterpriseLeaveManagement.API) in 4.2058ms
+2026-02-17 15:45:33.706 +05:30 [INF] Executed endpoint 'EnterpriseLeaveManagement.API.Controllers.LeaveController.GetLeaveHistory (EnterpriseLeaveManagement.API)'
+2026-02-17 15:45:33.707 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5062/api/leave/history - 200 null application/json; charset=utf-8 11.1935ms
+2026-02-17 15:45:35.963 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5062/api/leave/history - null null
+2026-02-17 15:45:35.968 +05:30 [INF] CORS policy execution successful.
+2026-02-17 15:45:35.969 +05:30 [INF] Executing endpoint 'EnterpriseLeaveManagement.API.Controllers.LeaveController.GetLeaveHistory (EnterpriseLeaveManagement.API)'
+2026-02-17 15:45:35.971 +05:30 [INF] Route matched with {action = "GetLeaveHistory", controller = "Leave"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetLeaveHistory() on controller EnterpriseLeaveManagement.API.Controllers.LeaveController (EnterpriseLeaveManagement.API).
+2026-02-17 15:45:35.975 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[ActionDate], [l].[ActionedBy], [l].[Comments], [l].[CreatedAt], [l].[CreatedBy], [l].[EndDate], [l].[IsDeleted], [l].[LeaveType], [l].[NumberOfDays], [l].[Reason], [l].[StartDate], [l].[Status], [l].[UpdatedAt], [l].[UpdatedBy], [l].[UserId]
+FROM [LeaveRequests] AS [l]
+WHERE [l].[IsDeleted] = CAST(0 AS bit) AND [l].[UserId] = @__userId_0 AND [l].[IsDeleted] = CAST(0 AS bit)
+ORDER BY [l].[CreatedAt] DESC
+2026-02-17 15:45:35.977 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[EnterpriseLeaveManagement.Core.DTOs.LeaveRequestDto, EnterpriseLeaveManagement.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-02-17 15:45:35.979 +05:30 [INF] Executed action EnterpriseLeaveManagement.API.Controllers.LeaveController.GetLeaveHistory (EnterpriseLeaveManagement.API) in 5.6533ms
+2026-02-17 15:45:35.980 +05:30 [INF] Executed endpoint 'EnterpriseLeaveManagement.API.Controllers.LeaveController.GetLeaveHistory (EnterpriseLeaveManagement.API)'
+2026-02-17 15:45:35.981 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5062/api/leave/history - 200 null application/json; charset=utf-8 17.5574ms

@@ -11,14 +11,14 @@ namespace EnterpriseLeaveManagement.Core.DTOs
     public class RegisterDto
     {
         public string FirstName { get; set; } = string.Empty;
-        public string LastName { set; } = string.Empty;
+        public string LastName { get; set; } = string.Empty;
         public string Email { get; set; } = string.Empty;
         public string Password { get; set; } = string.Empty;
         public string EmployeeCode { get; set; } = string.Empty;
         public DateTime DateOfBirth { get; set; }
         public DateTime DateOfJoining { get; set; }
         public int? DepartmentId { get; set; }
-        public int? ManagerId { get; set; }
+        public string? ManagerId { get; set; }
     }
 
     public class AuthResponseDto

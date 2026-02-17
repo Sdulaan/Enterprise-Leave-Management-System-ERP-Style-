@@ -1,4 +1,6 @@
 ﻿using System;
+using EnterpriseLeaveManagement.Core.Entities;
+
 
 namespace EnterpriseLeaveManagement.Core.DTOs
 {

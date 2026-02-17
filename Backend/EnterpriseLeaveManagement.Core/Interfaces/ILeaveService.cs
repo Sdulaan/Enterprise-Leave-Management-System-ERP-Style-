@@ -10,7 +10,7 @@ namespace EnterpriseLeaveManagement.Core.Interfaces
         Task<LeaveRequestDto> ApproveLeaveAsync(int leaveRequestId, string approverId, string? comments = null);
         Task<LeaveRequestDto> RejectLeaveAsync(int leaveRequestId, string approverId, string reason);
         Task<IEnumerable<LeaveRequestDto>> GetEmployeeLeaveHistoryAsync(string userId);
-        Task<IEnumerable<LeaveRequestDto>> GetTeamLeaveRequestsAsync(int managerId);
+        Task<IEnumerable<LeaveRequestDto>> GetTeamLeaveRequestsAsync(string managerId);
         Task<LeaveBalanceDto> GetLeaveBalanceAsync(string userId);
         Task<byte[]> GenerateLeaveReportAsync(ReportRequestDto reportRequest);
     }

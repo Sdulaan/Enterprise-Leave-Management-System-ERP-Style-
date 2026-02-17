@@ -72,7 +72,7 @@ namespace EnterpriseLeaveManagement.API.Controllers
 
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] RegisterDto model)
-        {
+        {          
             var user = new User
             {
                 UserName = model.Email,
@@ -124,15 +124,15 @@ namespace EnterpriseLeaveManagement.API.Controllers
                 new Claim(JwtRegisteredClaimNames.Sub, user.Id),
                 new Claim(JwtRegisteredClaimNames.Email, user.Email!),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                new Claim("EmployeeId", user.Id.ToString()),
+                new Claim("EmployeeId", user.Id),
                 new Claim("FullName", $"{user.FirstName} {user.LastName}")
             };
 
             claims.AddRange(roles.Select(role => new Claim(ClaimTypes.Role, role)));
 
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"] ?? throw new InvalidOperationException("JWT Key not found")));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-            var expires = DateTime.Now.AddMinutes(Convert.ToDouble(_configuration["Jwt:DurationInMinutes"]));
+            var expires = DateTime.Now.AddMinutes(Convert.ToDouble(_configuration["Jwt:DurationInMinutes"] ?? "60"));
 
             var token = new JwtSecurityToken(
                 issuer: _configuration["Jwt:Issuer"],
