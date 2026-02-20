@@ -13,5 +13,7 @@ namespace EnterpriseLeaveManagement.Core.Interfaces
         Task<IEnumerable<LeaveRequestDto>> GetTeamLeaveRequestsAsync(string managerId);
         Task<LeaveBalanceDto> GetLeaveBalanceAsync(string userId);
         Task<byte[]> GenerateLeaveReportAsync(ReportRequestDto reportRequest);
+        Task<IEnumerable<LeaveRequestDto>> GetAllLeaveRequestsAsync();
+
     }
 }

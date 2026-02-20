@@ -261,5 +261,15 @@ namespace EnterpriseLeaveManagement.Services.Services
             // Placeholder for report generation logic
             return Array.Empty<byte>();
         }
+
+        public async Task<IEnumerable<LeaveRequestDto>> GetAllLeaveRequestsAsync()
+        {
+            var leaveRequests = await _context.LeaveRequests
+                .Include(l => l.User)
+                .OrderByDescending(l => l.CreatedAt)
+                .ToListAsync();
+
+            return leaveRequests.Select(MapToDto);
+        }
     }
 }

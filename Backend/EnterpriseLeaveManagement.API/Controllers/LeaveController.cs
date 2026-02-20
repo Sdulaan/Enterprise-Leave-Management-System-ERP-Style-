@@ -121,7 +121,7 @@ namespace EnterpriseLeaveManagement.API.Controllers
         }
 
         [HttpGet("team-pending")]
-        [Authorize(Roles = "Manager")]
+        [Authorize(Roles = "Manager,HRAdmin")]
         public async Task<IActionResult> GetTeamPendingLeaves()
         {
             try
@@ -159,6 +159,22 @@ namespace EnterpriseLeaveManagement.API.Controllers
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error generating report");
+                return BadRequest(new { success = false, message = ex.Message });
+            }
+        }
+
+        [HttpGet("all")]
+        [Authorize(Roles = "HRAdmin")]
+        public async Task<IActionResult> GetAllLeaves()
+        {
+            try
+            {
+                var result = await _leaveService.GetAllLeaveRequestsAsync();
+                return Ok(new { success = true, data = result });
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error getting all leaves");
                 return BadRequest(new { success = false, message = ex.Message });
             }
         }
