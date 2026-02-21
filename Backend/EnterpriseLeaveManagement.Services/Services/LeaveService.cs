@@ -14,18 +14,15 @@ namespace EnterpriseLeaveManagement.Services.Services
     public class LeaveService : ILeaveService
     {
         private readonly ApplicationDbContext _context;
-        private readonly IEmailService _emailService;
         private readonly IAuditService _auditService;
         private readonly ILogger<LeaveService> _logger;
 
         public LeaveService(
             ApplicationDbContext context,
-            IEmailService emailService,
             IAuditService auditService,
             ILogger<LeaveService> logger)
         {
             _context = context;
-            _emailService = emailService;
             _auditService = auditService;
             _logger = logger;
         }
@@ -93,8 +90,8 @@ namespace EnterpriseLeaveManagement.Services.Services
 
             await _context.SaveChangesAsync();
 
-            await _emailService.SendEmailAsync(
-                leaveRequest.User.Email!,
+            await TrySendEmailAsync(
+                leaveRequest.User.Email,
                 "Leave Request Approved",
                 $"Your leave request from {leaveRequest.StartDate:d} to {leaveRequest.EndDate:d} has been approved."
             );
@@ -120,8 +117,8 @@ namespace EnterpriseLeaveManagement.Services.Services
 
             await _context.SaveChangesAsync();
 
-            await _emailService.SendEmailAsync(
-                leaveRequest.User.Email!,
+            await TrySendEmailAsync(
+                leaveRequest.User.Email,
                 "Leave Request Rejected",
                 $"Your leave request from {leaveRequest.StartDate:d} to {leaveRequest.EndDate:d} has been rejected. Reason: {reason}"
             );
@@ -231,11 +228,17 @@ namespace EnterpriseLeaveManagement.Services.Services
             var manager = await _context.Users.FindAsync(user.ManagerId);
             if (manager?.Email == null) return;
 
-            await _emailService.SendEmailAsync(
+            await TrySendEmailAsync(
                 manager.Email,
                 "New Leave Request",
                 $"Employee {user.FirstName} {user.LastName} has requested leave from {leaveRequest.StartDate:d} to {leaveRequest.EndDate:d}"
             );
+        }
+
+        private async Task TrySendEmailAsync(string? toEmail, string subject, string body)
+        {
+            // Email is temporarily disabled.
+            await Task.CompletedTask;
         }
 
         private LeaveRequestDto MapToDto(LeaveRequest leaveRequest)

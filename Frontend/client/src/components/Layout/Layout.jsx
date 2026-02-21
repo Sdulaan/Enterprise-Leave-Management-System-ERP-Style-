@@ -1,26 +1,26 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 
 const NAV = [
     {
         section: 'Employee', items: [
-            { to: '/dashboard', icon: '⊞', label: 'Dashboard' },
-            { to: '/apply-leave', icon: '＋', label: 'Apply Leave' },
-            { to: '/leave-history', icon: '◷', label: 'Leave History' },
-            { to: '/leave-balance', icon: '◑', label: 'Leave Balance' },
+            { to: '/dashboard', icon: 'DB', label: 'Dashboard' },
+            { to: '/apply-leave', icon: '+', label: 'Apply Leave' },
+            { to: '/leave-history', icon: 'H', label: 'Leave History' },
+            { to: '/leave-balance', icon: 'B', label: 'Leave Balance' },
         ]
     },
     {
         section: 'Manager', roles: ['Manager', 'HRAdmin'], items: [
-            { to: '/team-leaves', icon: '◈', label: 'Team Leaves' },
+            { to: '/team-leaves', icon: 'T', label: 'Team Leaves' },
         ]
     },
     {
         section: 'HR Admin', roles: ['HRAdmin'], items: [
-            { to: '/all-leaves', icon: '☰', label: 'All Leaves' },
-            { to: '/users', icon: '◉', label: 'Users' },
-            { to: '/reports', icon: '◎', label: 'Reports' },
+            { to: '/all-leaves', icon: 'A', label: 'All Leaves' },
+            { to: '/users', icon: 'U', label: 'Users' },
+            { to: '/reports', icon: 'R', label: 'Reports' },
         ]
     },
 ];
@@ -31,20 +31,32 @@ const ROLE_COLORS = {
     HRAdmin: '#10b981',
 };
 
+const THEME_KEY = 'leavems-theme';
+
 export default function Layout({ children }) {
     const { user, logout } = useAuth();
     const [collapsed, setCollapsed] = useState(false);
+    const [theme, setTheme] = useState(() => {
+        const savedTheme = localStorage.getItem(THEME_KEY);
+        if (savedTheme === 'light' || savedTheme === 'dark') return savedTheme;
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    });
     const navigate = useNavigate();
 
     const initials = user?.name?.split(' ').map(n => n[0]).join('').slice(0, 2).toUpperCase() || '?';
     const roleColor = ROLE_COLORS[user?.role] || '#6b7280';
 
+    useEffect(() => {
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem(THEME_KEY, theme);
+    }, [theme]);
+
     const handleLogout = () => { logout(); navigate('/login'); };
+    const toggleTheme = () => setTheme(current => (current === 'dark' ? 'light' : 'dark'));
 
     return (
         <div className="app-layout">
             <aside className={`sidebar ${collapsed ? 'collapsed' : ''}`}>
-                {/* Header */}
                 <div className="sidebar-header">
                     <div className="logo-mark">LM</div>
                     {!collapsed && (
@@ -54,11 +66,10 @@ export default function Layout({ children }) {
                         </div>
                     )}
                     <button className="collapse-btn" onClick={() => setCollapsed(c => !c)}>
-                        {collapsed ? '›' : '‹'}
+                        {collapsed ? '>' : '<'}
                     </button>
                 </div>
 
-                {/* User card */}
                 <div className="user-card">
                     <div className="avatar" style={{ borderColor: roleColor, color: roleColor }}>{initials}</div>
                     {!collapsed && (
@@ -69,7 +80,6 @@ export default function Layout({ children }) {
                     )}
                 </div>
 
-                {/* Nav */}
                 <nav className="nav-menu">
                     {NAV.map(({ section, roles, items }) => {
                         if (roles && !roles.includes(user?.role)) return null;
@@ -94,10 +104,17 @@ export default function Layout({ children }) {
                     })}
                 </nav>
 
-                {/* Footer */}
                 <div className="sidebar-footer">
+                    <button
+                        className="theme-btn"
+                        onClick={toggleTheme}
+                        title={collapsed ? `Switch to ${theme === 'dark' ? 'light' : 'dark'} mode` : undefined}
+                    >
+                        <span className="nav-icon">{theme === 'dark' ? '☀' : '☾'}</span>
+                        {!collapsed && <span>{theme === 'dark' ? 'Light Theme' : 'Dark Theme'}</span>}
+                    </button>
                     <button className="logout-btn" onClick={handleLogout} title={collapsed ? 'Logout' : undefined}>
-                        <span className="nav-icon">⏻</span>
+                        <span className="nav-icon">X</span>
                         {!collapsed && <span>Logout</span>}
                     </button>
                 </div>

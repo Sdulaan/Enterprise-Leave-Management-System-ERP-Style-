@@ -74,7 +74,6 @@ builder.Services.AddCors(options =>
 // Register Repositories and Services
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped<ILeaveService, LeaveService>();
-builder.Services.AddScoped<IEmailService, EmailService>();
 builder.Services.AddScoped<IAuditService, AuditService>();
 
 var app = builder.Build();
